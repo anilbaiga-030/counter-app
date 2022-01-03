@@ -4,7 +4,7 @@ class Counter extends Component {
   render() {
     return (
       <div className="row">
-        <div className={this.getClassesAsWindowWidth()}>
+        <div className="col-1">
           <button className={this.getBadgeClasses()}>
             <span>{this.formatCount()}</span>
           </button>
@@ -38,10 +38,6 @@ class Counter extends Component {
     );
   }
 
-  getClassesAsWindowWidth() {
-    return "col-1";
-  }
-
   getBadgeClasses() {
     let classes = "btn btn-sm m-2 badge-";
     classes += this.props.counter.value === 0 ? "warning" : "primary";
@@ -58,8 +54,6 @@ class Counter extends Component {
     const { value } = this.props.counter; // Object Destructuring
     return value === 0 ? "Zero" : value;
   }
-
-  //   Getting the window Dimensions
 }
 
 export default Counter;
