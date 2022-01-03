@@ -5,7 +5,10 @@ class Counter extends Component {
     return (
       <div className="row">
         <div className="col-1">
-          <button className={this.getBadgeClasses()}>
+          <button
+            style={{ cursor: "context-menu" }}
+            className={this.getBadgeClasses()}
+          >
             <span>{this.formatCount()}</span>
           </button>
         </div>
