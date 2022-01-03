@@ -52,7 +52,9 @@ class App extends React.Component {
     const counters = [...this.state.counters]; // Whole counters is cloned
     const index = counters.indexOf(counter);
     counters[index] = { ...counter }; // Only the counter which is being incremented gets cloned in counters itself
-    counters[index].value--; // Now our 'counters' Object doesn't get modified directly
+    if (counters[index].value > 0) {
+      counters[index].value--; // Now our 'counters' Object doesn't get modified directly
+    }
     this.setState({ counters });
   };
 
